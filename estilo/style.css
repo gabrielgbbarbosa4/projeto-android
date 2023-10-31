@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* pegando fontes em sites */
+
+@font-face {
+    font-family: 'Android';
+    src: url(../fontes/idroid.otf) format('opentype');
+    font-weight: normal;
+    /*aplicando fonte baixada e usado pelo pc*/
+}
+*
+{
+    padding: 0px;
+    /*espaço interno ou tamanho que vai ser ocupado*/
+    margin: 0px;
+    /*espaço externo ou distancia que vai ter entre um e outro*/   
+}
+
+:root
+{
+    --cor0: #c5edb6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #036d1e;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-andoird: 'Android', cursive;
+    --fonte-destaque: 'Bebas Neue', cursive;
+}
+body
+{
+    background-color: var(--cor0);
+}
+
+a.externo::after
+{
+    content:'\1F517';
+    /*criando uma classe "externo" para que apenas os links que forem dessa classe possam ter esse efeito*/
+    /*é necessario declarar se será inserido antes ou depois*/
+}
+
+header
+{
+   background-image: linear-gradient(var(--cor2), var(--cor4));
+   /*seleciona uma mudanda entre duas cores para dar a ideia de estrar clarenado ou escurencendo*/
+   min-height: 150px;
+   /*determina a altuma minima do cabeçãlho (header)*/
+   padding-top: 20px;
+   /*para q o texto não ficasse colado com o topo da pagina usamos o padding para criar um limite interno*/
+}
+
+header > h1
+{
+   text-align: center;
+   /*centralisando o centro*/
+   font-family: var(--fonte-destaque);
+   /*escolha de fonta*/
+   font-size: 3em;
+   /*tamanho da fonte*/
+   margin-bottom: 20px;
+   color: white;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.53);
+   /*colocar sombra no texto os parametros são direita, baixo e desfoque*/
+}
+
+header > p
+{
+   text-align: center;
+   font-family: var(--fonte-padrao);
+   font-size: 1.2em;
+   padding-left: 10px;
+   padding-right: 10px;
+   max-width: 500px;
+   margin: auto;
+   color: white;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.53);
+}
+
+nav
+{
+    background-color: var(--cor5);
+    padding: 10px;
+}
+
+nav > a
+{
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    text-shadow: 0px 0px 0px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    /*deixar as bordas arredondadas*/
+    transition-duration: 0.5s;
+    /*tempo que demora que qualquer efeito no "nav > a:hover" possa acontecer*/
+}
+
+nav > a:hover
+{
+    /*houver é o efeito que ira acontecer quando o mause for passado por cima*/
+    background-color: var(--cor3);
+    color: var(--cor5)
+}
+
+main
+{
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    /*tamanho minimo e maximo que as telas podem ter */
+
+    margin: auto;
+    margin-bottom: 50px;
+
+
+    padding: 20px;
+    box-shadow: 0px 0px 10px;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* criando bordas apenas nas estremidades inferiores */
+
+}
+
+main > article > h1
+{
+    font-family: var(--fonte-andoird);
+    color: var(--cor5);
+}
+
+main > article > h2
+{
+    font-family: var(--fonte-andoird);
+    color: var(--cor4);
+    font-size: 1.4em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    /* efeito da esquerda pra direita "to right" dele ficando com a cor "var(--cor1)" até ficar transparente "transparent"*/
+    padding-left: 5px;
+    padding-bottom: 3px;
+    border-radius: 8px;    
+}
+
+main p
+{
+    margin: 15px 0px 15px 0px;
+    /*criando margens para os paragrafros, são inseridos na ordem cima, esquerda, baixo, direita (sentido horario de um relógio)*/
+    text-align: justify;
+    /*fazendo o texto ficar alinhado em ambos os lados*/
+    text-indent: 30px;
+    /*faz o espaçamento do paragrafo*/
+    font-size: 1.1em;
+    /*determina o tamanho das letras*/
+    line-height: 1.3em;
+    /*faz o espaçamento entre as linhas*/
+}
+
+main strong
+{
+    color: var(--cor5);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+main a
+{
+    text-decoration: none;
+    color: var(--cor4);
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: var(--cor0);
+    padding: 2px 0px 2px 5px;
+    /*sendo colocado apenas 2 parametros o 1º será cima e baixo e o segundo será esquerda e direita*/
+}
+
+main a:hover
+{
+    text-decoration: underline;
+    color: var(--cor3);
+}
+
+main img
+{
+    width: 100%;
+    /*imagem sendo aberta com 100% do tamanho original*/
+}
+
+main img.pequena
+{
+    max-width: 350px;
+    /*tbm serve para definir tamanho minimo e maximo que que as imagens podem ter */
+    display: block;
+    margin: auto;
+    /*juntos centralisam as imagens*/
+}
+
+div.video
+{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    /*o background-color usado para compreenção de toda a area, a margin para completar todo o espaço e o padding para afartar turo em volta*/
+    padding-bottom: 56.6%;
+    position: relative;
+    /*o video irá se ajeitar dependento do tamanho da tela*/
+}
+
+div.video > iframe
+{
+    position: absolute;
+    /*posição absoluta permite que ele ocupe o espaço levando em conciredação altura e largura mantendo seu formato original*/
+    top: 5%;
+    /*distancia o video para sua bora de cima*/
+    left: 5%;
+    /*distancia o video para sua bora da esquerda*/
+    height: 90%;
+    /*o video ira ocupar 90% da altura respeitando seu formato ortiginal*/
+    width: 90%;
+    /*o video ira ocupar 90% da largura respeitando seu formato ortiginal*/
+}
+
+aside
+{
+    background-color: #83e1ad;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.600);
+    /*colocar sombra no bloco os parametros são direita, baixo e desfoque*/
+}
+
+aside > h3
+{
+    background-color: var(--cor4);
+    padding: 10px ;
+    color: white;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: normal;
+    /*todo titulo (h1,h2,h3) são em negrito, o "font-weight: normal" tira esse nregrito*/
+}
+
+
+aside > ul
+{
+    list-style-position: inside;
+    /*feito para colocar a "bolinhas dentro do espaço"*/
+    columns: 2;
+    /*separa a lista no numero de colunas declarado"*/
+    list-style-type: '\2714';
+    /*codigo para mudar o simbolo nas listas, este código pode ser encontrado no site"emojipedia.org"*/
+}
+
+aside > ul > li
+{
+    text-decoration: none;
+}
+
+footer
+{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    /*sendo colocado apenas 1 parametros sera o mesmo para todos os lados*/
+}
+
+footer > p > a
+{
+    text-decoration: none;
+    color: white;
+}
+
+footer > p > a:hover
+{
+    text-decoration: underline;
+}
